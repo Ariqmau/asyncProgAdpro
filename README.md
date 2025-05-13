@@ -21,4 +21,16 @@ Server WebSocket dijalankan pada port 2000 menggunakan tokio, dan tiga client te
 ### Experiment 2.2: Modifying port
 Pada server, port diubah pada baris `TcpListener::bind("127.0.0.1:2000")` menjadi `TcpListener::bind("127.0.0.1:8080")`, sedangkan pada client, URI WebSocket diubah dari `ws://127.0.0.1:2000` menjadi `ws://127.0.0.1:8080`. WebSocket merupakan koneksi dua arah antara client dan server, sehingga port yang digunakan untuk membuka koneksi harus sama di kedua sisi.
 
+### Experiment 2.3: Small changes, add IP and Port
+Run after changes:
+![img.png](chat-async/images/img0.png)
+Perubahan dilakukan di server dengan mengubah:
+```
+if let Some(text) = msg.as_text() {
+    println!("From client {addr:?} {text:?}");
+    let msg = format!("[{addr}]: {text}");
+    bcast_tx.send(msg)?;
+}
+```
+Penambahan informasi alamat IP dan port dilakukan di sisi server karena hanya server yang memiliki akses langsung terhadap informasi tersebut ketika sebuah koneksi WebSocket diterima dan server bertugas menyebarkan pesan ke semua client.
 
