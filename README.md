@@ -18,5 +18,7 @@ Run one server(top left), and three clients:
 ![img.png](chat-async/images/img.png)
 Server WebSocket dijalankan pada port 2000 menggunakan tokio, dan tiga client terhubung ke server tersebut. Setiap client dapat mengirimkan pesan melalui terminal, dan pesan tersebut akan dikirim ke server. Lalu server menyiarkan/broadcast pesan itu ke semua client lain, termasuk pengirimnya. Jadi, setiap kali salah satu client mengetik dan mengirimkan pesan, pesan tersebut langsung muncul di semua client lainnya secara real-time seperti yang bisa dilihat discreenshot.
 
+### Experiment 2.2: Modifying port
+Pada server, port diubah pada baris `TcpListener::bind("127.0.0.1:2000")` menjadi `TcpListener::bind("127.0.0.1:8080")`, sedangkan pada client, URI WebSocket diubah dari `ws://127.0.0.1:2000` menjadi `ws://127.0.0.1:8080`. WebSocket merupakan koneksi dua arah antara client dan server, sehingga port yang digunakan untuk membuka koneksi harus sama di kedua sisi.
 
 
