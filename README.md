@@ -13,3 +13,10 @@ Run multiple spawn tanpa `drop(spawner);`:
 ![img1.png](timer_future/images/img1.png)
 Ketika `drop(spawner);` tidak digunakan, channel tetap terbuka dan executor akan terus menunggu task baru selamanya. Akibatnya, meskipun semua task yang sudah dikirim selesai dijalankan, program tidak akan pernah berhenti karena executor masih menganggap kemungkinan adanya task baru.
 
+### Experiment 2.1: Original code, and how it run
+Run one server(top left), and three clients:
+![img.png](chat-async/images/img.png)
+Server WebSocket dijalankan pada port 2000 menggunakan tokio, dan tiga client terhubung ke server tersebut. Setiap client dapat mengirimkan pesan melalui terminal, dan pesan tersebut akan dikirim ke server. Lalu server menyiarkan/broadcast pesan itu ke semua client lain, termasuk pengirimnya. Jadi, setiap kali salah satu client mengetik dan mengirimkan pesan, pesan tersebut langsung muncul di semua client lainnya secara real-time seperti yang bisa dilihat discreenshot.
+
+
+
