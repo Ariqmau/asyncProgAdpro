@@ -34,3 +34,5 @@ if let Some(text) = msg.as_text() {
 ```
 Penambahan informasi alamat IP dan port dilakukan di sisi server karena hanya server yang memiliki akses langsung terhadap informasi tersebut ketika sebuah koneksi WebSocket diterima dan server bertugas menyebarkan pesan ke semua client.
 
+### Experiment 3.1: Original code
+![img.png](YewChat/image/img.png)
