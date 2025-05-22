@@ -36,3 +36,7 @@ Penambahan informasi alamat IP dan port dilakukan di sisi server karena hanya se
 
 ### Experiment 3.1: Original code
 ![img.png](YewChat/image/img.png)
+
+### Experiment 3.2: Be Creative!
+![img.png](YewChat/image/img1.png)
+Saya menambahkan icon dan label teks yang lebih menarik, dan juga menambahkan avatar sesuai nama.
